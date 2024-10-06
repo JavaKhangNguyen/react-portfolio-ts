@@ -1,8 +1,17 @@
 import React from "react";
 
-const ResumeCard = ({ badge, title, subTitle, des, className, logo }) => {
+interface ResumeCardProps {
+  badge: string;
+  title: string;
+  subTitle: string;
+  des: string;
+  className: string;
+  logo: string;
+}
+
+const ResumeCard: React.FunctionComponent<ResumeCardProps> = ({ badge, title, subTitle, des, className, logo }) => {
   // Function to split the title and add line breaks
-  const formatTitle = (title) => {
+  const formatTitle = (title: string) => {
     return title.split('/').map((part, index, array) => (
       <React.Fragment key={index}>
         {part.trim()}
