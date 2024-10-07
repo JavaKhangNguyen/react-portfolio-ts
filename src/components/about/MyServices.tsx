@@ -12,7 +12,7 @@ const MyServices: React.FunctionComponent = () => {
         subTitle=""
       />
       <ServicesCard
-        icons={<FontAwesomeIcon icon={faTicket} flip="horizontal" />}
+        icons={<FontAwesomeIcon icon={faTicket} flip />}
         title="Service Desk Engineering"
         subTitle=""
       />
