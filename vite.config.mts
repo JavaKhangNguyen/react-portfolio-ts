@@ -7,6 +7,7 @@ export default defineConfig({
     port: 3000
   },
   build:{
+    cssCodeSplit: false,
     rollupOptions:{
       external: ['./src/test', './src/__tests__']
     }
