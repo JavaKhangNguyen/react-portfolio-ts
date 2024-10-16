@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Textillate } from "textillate-react";
+import TextTransition, { presets } from 'react-text-transition';
 import bannerImgJpg from "../../assets/CV.jpg";
 import bannerImgWebp from "../../assets/CV.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -91,18 +91,9 @@ const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
           </h1>
           <p className="text-base font-medium text-designColor tracking-wide">
             {/* Display only the current role */}
-            <Textillate
-              key={animateKey} // Force re-render when role changes
-              option={{
-                loop: true,
-                minDisplayTime: 1500,
-                in: { effect: "fadeInUp", sync: true },
-                out: { effect: "fadeOutDown", sync: true },
-                initialDelay: 150
-              }}
-            >
-              <span>{roles[currentRoleIndex]}</span>
-            </Textillate>
+            <TextTransition springConfig={presets.default}>
+              {roles[currentRoleIndex]}
+            </TextTransition>
           </p>
           <div className="flex justify-center gap-2 mt-2">
             <a
