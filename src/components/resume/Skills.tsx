@@ -118,7 +118,6 @@ const Skills: React.FunctionComponent = () => {
             "Web Services Deployments",
             "API Development",
             "AI Training/Integration",
-            "Service Desk Support",
           ].map((experience, index) => (
             <li
               key={index}
