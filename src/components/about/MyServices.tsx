@@ -13,7 +13,7 @@ const MyServices: React.FunctionComponent = () => {
       />
       <ServicesCard
         icons={<FontAwesomeIcon icon={faTicket} fade />}
-        title="Service Desk Engineering"
+        title="Helpdesk Support"
         subTitle=""
       />
       <ServicesCard
