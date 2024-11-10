@@ -10,7 +10,6 @@ interface ResumeCardProps {
 }
 
 const ResumeCard: React.FunctionComponent<ResumeCardProps> = ({ badge, title, subTitle, des, className, logo }) => {
-  // Function to split the title and add line breaks
   const formatTitle = (title: string) => {
     return title.split('/').map((part, index, array) => (
       <React.Fragment key={index}>
