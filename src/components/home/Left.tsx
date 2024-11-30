@@ -7,13 +7,13 @@ import { faFileArrowDown, faPaperPlane } from "@fortawesome/free-solid-svg-icons
 import { faFacebookF, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Resizer from "react-image-file-resizer";
 
-// Define the type for the props
 interface LeftProps {
   handleContactClick: () => void;
 }
 
 const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
-  const roles = ["Front-end Developer", "Back-end Developer", "Full-stack Developer", "Web Developer", "IT Helpdesk"];
+  const roles = ["Front-end Developer"];
+  // const roles = ["Back-end Developer", "Full-stack Developer", "Web Developer", "IT Helpdesk"]
   const [currentRoleIndex, setCurrentRoleIndex] = useState<number>(0);
   const [animateKey, setAnimateKey] = useState<number>(0); // Force re-render for Textillate when role changes
   const [resizedImage, setResizedImage] = useState<string | null>(null);
@@ -21,14 +21,13 @@ const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-      setAnimateKey((prevKey) => prevKey + 1); // Force re-render by updating key
-    }, 3500); // Change every 3 seconds
+      setAnimateKey((prevKey) => prevKey + 1);
+    }, 3500); 
 
-    return () => clearInterval(interval); // Clean up on unmount
+    return () => clearInterval(interval);
   }, [roles.length]);
 
   useEffect(() => {
-    // Function to resize the image
     const resizeImage = (
       imgSrc: File, 
       format: string = "WEBP", 
@@ -48,11 +47,10 @@ const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
             setResizedImage(uri);
           }
         },
-        "base64" // Output type
+        "base64" 
       );
     };
 
-    // Convert the imported image to blob or base64 and resize it
     fetch(bannerImgJpg)
       .then((response) => response.blob())
       .then((blob) => {
@@ -77,7 +75,7 @@ const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
           ) : (
             <img
               className="w-full h-full object-contain md:object-scale-down rounded-2xl"
-              src={bannerImgJpg} // Fallback for browsers that don't support <picture>
+              src={bannerImgJpg} 
               alt="bannerImage"
               loading="eager"
             />
