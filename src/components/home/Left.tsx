@@ -13,9 +13,9 @@ interface LeftProps {
 
 const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
   const roles = ["Front-end Developer"];
-  // const roles = ["Back-end Developer", "Full-stack Developer", "Web Developer", "IT Helpdesk"]
+  // const roles = ["Front-end Developer", "Back-end Developer", "Full-stack Developer", "Web Developer"]
   const [currentRoleIndex, setCurrentRoleIndex] = useState<number>(0);
-  const [animateKey, setAnimateKey] = useState<number>(0); // Force re-render for Textillate when role changes
+  const [animateKey, setAnimateKey] = useState<number>(0);
   const [resizedImage, setResizedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -88,8 +88,10 @@ const Left: React.FC<LeftProps> = ({ handleContactClick }) => {
             Nguyen Phuc Khang
           </h1>
           <p className="text-base font-medium text-designColor tracking-wide">
-            {/* Display only the current role */}
-            <TextTransition springConfig={presets.default}>
+            <TextTransition 
+              key={animateKey}
+              springConfig={presets.default}
+            >
               {roles[currentRoleIndex]}
             </TextTransition>
           </p>

@@ -114,11 +114,8 @@ const Skills: React.FunctionComponent = () => {
           icon={<FontAwesomeIcon icon={faCircleInfo} flip="horizontal" />}
         />
         <ul className="py-4 flex flex-col gap-2">
-          {[
-            "Web Services Deployments",
-            "API Development",
-            "AI Training/Integration",
-          ].map((experience, index) => (
+          {["Web Services Deployments", "API Development", "AI Training/Integration"]
+          .map((experience, index) => (
             <li
               key={index}
               className={`flex items-center gap-4 text-textColorborder-b-zinc-800`}

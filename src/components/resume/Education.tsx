@@ -30,21 +30,21 @@ const Education: React.FunctionComponent = () => {
       <div className="col-span-9 md:col-span-4">
         <ResumeTitle title="Experience" icon={<FontAwesomeIcon icon={faBriefcase} flip="horizontal"/>} />
         <ResumeCard
-          badge="12/2024 - Present"
+          badge="06/2023 - Present"
           className="text-base text-designColor"
-          title="Front-end developer"
+          title="Front-end Developer (part-time)"
+          subTitle="AI4IA"
+          logo={AI4IA}
+          des=""
+        />
+        <ResumeCard
+          badge="12/2024 - 02/2025"
+          className="text-base"
+          title="Front-end Developer - Intern"
           subTitle="DigiEx Group"
           logo={DigiEx}
           des=""
         />
-        {/* <ResumeCard
-          badge="06/2023 - Present"
-          className="text-base text-designColor"
-          title="Front-end developer (part-time)"
-          subTitle="AI4IA"
-          logo={AI4IA}
-          des=""
-        /> */}
         <ResumeCard
           badge="09/2023 - 07/2024"
           className="text-base"
@@ -82,15 +82,11 @@ const Education: React.FunctionComponent = () => {
         />
         <ul className="py-4 flex flex-col gap-4 border-b-[1px] border-b-zinc-800">
           <li className="flex items-center gap-4 text-textColor">
-            <span className="text-designColor text-lg">
-              <Flag country="GB" />
-            </span>
+            <span className="text-designColor text-lg"><Flag country="GB" /></span>
             English: IELTS 6.5 Academic
           </li>
           <li className="flex items-center gap-4 text-textColor">
-            <span className="text-designColor text-lg">
-              <Flag country="VN" />
-            </span>
+            <span className="text-designColor text-lg"><Flag country="VN" /></span>
             Vietnamese: Native
           </li>
         </ul>

@@ -1,5 +1,5 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -9,7 +9,7 @@ module.exports = {
         md: "768px",
         xl: "1024px",
         lgl: "1280px",
-        xl: "1536px",
+        xxl: "1536px",
       },
       fontFamily: {
         bodyfont: ["Poppins", "sans-serif"],
@@ -40,4 +40,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwind-scrollbar")],
-};
+} satisfies Config;
